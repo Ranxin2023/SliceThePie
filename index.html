@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="src/favicon.svg" />
+    <link rel="stylesheet" href=".src/index.css" />
+    <link rel="stylesheet" href=".src/reset.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="https://d3js.org/d3.v6.min.js"></script>
+    <!--<script defer src="./src/pieChartCalculate.jsx"></script>-->
+    <script type="module" src="./src/main.jsx"></script>
+    <title>React and D3</title>
+
+  </head>
+
+  <body>
+    
+    <header>
+    <h1>Slice the Pie</h1>
+    </header>
+    
+    <p>
+      Say you got to run the University. How much would you allocate to different sectors? Learn about your funding sources, with a guessing game.
+      </p>
+
+     <p>
+      You make your choices by inputting percentages of each section of a pie chart. See how well your choices match the ones the real Provost made. 
+     </p>
+
+    <!--draw the progress bar component-->
+    <div id="textPB">
+    <div id="revenuePB" class="blueTextColor">REVENUES</div>
+    <div id="expensesPB" class="whiteTextColor">EXPENSES</div>
+    <div id="comparePB" class="whiteTextColor">COMPARE</div>
+    </div>
+
+    <div id="shapePB">
+      <div id="circle1" class="blueColor"></div>
+      <div id="line1" class="greyColor"></div>
+      <div id="circle2" class="greyColor"></div>
+      <div id="line2" class="greyColor"></div>
+      <div id="circle3" class="greyColor"></div>
+      <div id="invisibleline" class="blackColor"></div>
+    </div>
+    <!--drawing the chart-->
+    
+    <div id="root1" class="graph"></div>
+    <div id="root2" class="graph hide"></div>
+    <div id="root3" class="graph hide"></div>
+    <div id="root4" class="graph hide"></div>
+    <div id="root5" class="graph hide"></div>
+    <div id="root6" class="graph hide"></div>
+    <ul id="listOfInput">
+      <div>
+        <span id="function">Function</span>
+        <span id="percentage">Percentage(%)</span>
+      </div>
+
+      <li id="MedicalCare">
+        Medical Center
+      </li>
+
+      <div id="firstInfo" class="infoText">!</div>
+
+      <div id="FirstInput" class="percentSign">
+          <input type="number" id="FirstInputValue" value=0 step=1 />
+      </div>
+
+      <div id="firstRevenueExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="MCRInfo" id="MCRtextarea"  cols="30" rows="7">A large, not-for-profit regional medical center, including multiple hospitals, labs and clinics. Income comes from patients, medical insurance companies, and government programs like medicare.</textarea>
+      </div>
+
+      <div id="firstExpenditureExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="MCEInfo" id="MCEtextarea"  cols="30" rows="7">The cost of providing care at the Medical Center is roughly what we get paid to provide it.</textarea>
+      </div>
+
+      <li id="StateUnrestricted" class="listContainer">
+        State Unrestricted
+      </li>
+
+      <li id="InstructionAndAcademicSupport" class="listContainer hide">
+        Instruction and Academic Support
+      </li>
+
+      <div id="secondInfo" class="infoText">!</div>
+
+      <div id="SecondInput" class="percentSign">
+          <input type="number" id="SecondInputValue" value=0 step=1 />
+      </div>
+      
+      <div id="secondRevenueExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="SUInfo" id="SUtextarea"  cols="30" rows="7">General funds given by the taxpayers of California, appropriated annualy by the state legislature. General funds are not dedicated to specific services.  </textarea>
+      </div>
+
+      <div id="secondExpenditureExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="IandASInfo" id="IandAStextarea"  cols="30" rows="7">Professors, advisors, deans, the library, the computer labs, etc, including Medical School faculty salaries.</textarea>
+      </div>
+
+      <li id="Tuition" class="listContainer">
+        Tuition
+      </li>
+
+      <li id="Research" class="listContainer hide">
+        Research
+      </li>
+
+      <div id="thirdInfo" class="infoText">!</div>
+
+      <div id="ThirdInput" class="percentSign">
+        <input type="number" id="ThirdInputValue" value=0 step=1 />
+      </div>
+
+      <div id="thirdRevenueExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="TuiInfo" id="Tuitextarea"  cols="30" rows="7">Students pay tuition to attend the University. Non-California residents pay about twice as much as residents.  Tuition is also general funds. </textarea>
+      </div>
+
+      <div id="thirdExpenditureExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="researchInfo" id="Restextarea"  cols="30" rows="7">The costs of doing the research, mostly researcher salaries. </textarea>
+      </div>
+
+      <li id="StudentFees" class="listContainer">
+        Student Fees
+      </li>
+
+      <li id="StudentServiceAndFinancialAid" class="listContainer hide">
+        Student Service And Financial Aid
+      </li>
+
+      <div id="fourthInfo" class="infoText">!</div>
+
+      <div id="FourthInput" class="percentSign">
+          <input type="number" id ="FourthInputValue" value=0 step=1 />
+      </div>
+      
+      <div id="fourthRevenueExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="SFInfo" id="SFtextarea"  cols="30" rows="7">Fees are dedicated to specific services, such as athletic facilities, bus service (UNITRANS), student organizations, the CoHo and Student Community Center, etc. </textarea>
+      </div>
+
+      <div id="fourthExpenditureExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="SSandFAInfo" id="SSandFAtextarea"  cols="30" rows="7">Student Health, things covered by fees, Admissions, and also financial aid from the general funds, which is about $100M or 1.5%.  </textarea>
+      </div>
+
+      <li id="GrantandContracts" class="listContainer">
+        Grants and Contracts
+      </li>
+
+      <li id="DeprecationOrInterestExpenses" class="listContainer hide">
+        Deprecation/Interest Expenses
+      </li>
+
+      <div id="fifthInfo" class="infoText">!</div>
+
+      <div id="FifthInput" class="percentSign">
+        <input type="number" id ="FifthInputValue" value=0 step=1 />
+      </div>
+
+      <div id="fifthRevenueExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="GandCInfo" id="GandCtextarea"  cols="30" rows="7">Government and industry funds given to faculty and graduate students to perform research projects. These include up to 50% overhead in addition to the cost of the research. </textarea>
+      </div>
+
+      <div id="fifthExpenditureExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="DIInfo" id="DItextarea"  cols="30" rows="7"> Depreciation is the loss of value of buildings and equipment as they wear out. Mostly unavoidable financial losses. 
+         </textarea>
+      </div>
+
+      <li id="SalesandServiceAuxiliary" class="listContainer">
+        Sales and Service,Auxiliary
+      </li>
+
+      <li id="InstitutionalSupport" class="listContainer hide">
+        Institutional Support
+      </li>
+
+      <div id="sixthInfo" class="infoText">!</div>
+
+      <div id="SixthInput" class="percentSign">
+        <input type="number" id ="SixthInputValue" value=0 step=1 />
+      </div>
+
+      <div id="sixthRevenueExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="SandSAInfo" id="SandSAtextarea"  cols="30" rows="7"> Services other than education that people pay for, like dorms, dining, parking, etc.  At UC Davis, this also includes almost $500M of revenue generated by medical school faculty, or 8%, making this category look really big. </textarea>
+      </div>
+
+      <div id="sixthExpenditureExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="ISInfo" id="IStextarea"  cols="30" rows="7"> Provost and Chancellor's offices, raising money, accounting, personnel, legal, making budgets.   
+         </textarea>
+      </div>
+
+      <li id="GiftsEndowmentsInterest" class="listContainer">
+        Gifts, Endowments,Interest
+      </li>
+
+      <div id="seventhInfo" class="infoText">!</div>
+
+      <div id="seventhInput" class="percentSign">
+        <input type="number" id ="seventhInputValue" value=0 step=1 />
+      </div>
+
+      <div id="seventhExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="GEIInfo" id="GEItextarea"  cols="30" rows="7">  Endowments are past gifts that were invested to provide income; interest is earned on other savings. The Museum is the direct result of a $10M gift from Jan Shrem and Maria Manetti Shrem.   
+         </textarea>
+      </div>
+
+      <li id="OtherList" class="listContainer">Other</li>
+
+      <div id="eighthInfo" class="infoText">!</div>
+
+      <div id="eighthInput" class="percentSign">
+        <input type="number" id ="eighthInputValue" value=0 step=1 />
+      </div>
+
+      <div id="eighthRevenueExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="ORInfo" id="ORtextarea"  cols="30" rows="7">Federal grants for tuition and living expenses for low-income students. Percentage of students with Pell grants is a good way to measure who a University serves; at UCD, it's 34%; at Cal Tech it's 14%; at Sac State it's 71%.</textarea>
+      </div>
+
+      <div id="eighthExpenditureExplain" class="explain hide">
+        <div class="triangle"></div>
+        <textarea name="OEInfo" id="OEtextarea"  cols="30" rows="7">Upkeep of the grounds and building, and utilities, which are less than 1%.  </textarea>
+      </div>
+    </ul>
+    
+    <div id="totalShow">Total%: </div>
+    <!--use react to add total number-->
+    <div id="totalInput" class="percentSign">
+      <input type="number" id="totalValue" value=0 step=1/>
+    </div>
+    <button id="next" class="button">Next</button>
+    <div>
+    <button id="compare" class="button hide">Compare</button>
+    </div>
+    <div>
+    <button id="previous" class="button hide">Previous</button>
+    </div>
+    <button id="restart" class="button hide">Restart</button>
+  </body>
+</html>

@@ -1,0 +1,604 @@
+body{
+  margin-left:30px;
+  background-color:#2e2e2e;
+  font-family: "Open Sans", sans-serif;
+  color:white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1220px;
+  margin: auto;
+  padding: 0px 40px;
+}
+
+.hide{
+  display:none;
+}
+
+h1{
+  color:white;
+}
+
+p{
+  margin:30px;
+}
+
+input{
+  display: inline;
+  text-align:center;
+  max-width:60px;
+  color:white;
+  font-size:15px;
+  border-top:2px solid #2e2e2e;
+  border-left:2px solid #2e2e2e;
+  border-right:2px solid #2e2e2e;
+  border-bottom:2px solid white;
+  background-color:#2e2e2e;
+}
+
+div.percentSign::after{
+  content:"%";
+  color:white;
+  margin-left:-35px;
+  font-size:17px;
+}
+
+ul {
+  list-style: none; /* Remove default bullets */
+}
+/*
+li{
+  text-align:left;
+  margin-top:10px;
+}
+*/
+/*list of items start*/
+#function{
+  float:left;
+  margin-left:-20px;
+  color:white;
+}
+
+#percentage{
+  margin-left:230px;
+  color:white;
+}
+
+#MedicalCare{
+  float:left;
+  color:white;
+  margin-top:10px;
+}
+
+#MedicalCare::before{
+  content: "\2022";  
+  color:#f0bf00; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#FirstInput{
+  margin-left:300px;
+  margin-top:21px;
+}
+
+#StateUnrestricted{
+  float:left;
+  color:white;
+  margin-top:10px;
+}
+
+#StateUnrestricted::before{
+  content: "\2022";  
+  color:#f6e50e; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#InstructionAndAcademicSupport::before{
+  content: "\2022";  
+  color:#f6e50e; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#InstructionAndAcademicSupport{
+  color:white;
+  float:left;
+  margin-top:10px;
+}
+
+#SecondInput{
+  margin-left:300px;
+  margin-top:21px;
+}
+
+#Tuition::before{
+  content: "\2022";  
+  color:#fff688; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#Tuition{
+  float:left;
+  color:white;
+  margin-top:10px;
+}
+
+#ThirdInput{
+  margin-left:300px;
+  margin-top:21px;
+}
+
+#Research::before{
+  content: "\2022";  
+  color:#fff688; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#Research{
+  float:left;
+  color:white;
+  margin-top:10px;
+}
+
+#StudentFees::before{
+  content: "\2022";  
+  color:#5f63ec; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#StudentFees{
+  float: left;
+  color:white;
+  margin-top:10px;
+}
+
+#FourthInput{
+  margin-left:300px;
+  margin-top:21px;
+}
+
+#StudentServiceAndFinancialAid::before{
+  content: "\2022";  
+  color:#5f63ec; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#StudentServiceAndFinancialAid{
+  float: left;
+  color:white;
+  margin-top:10px;
+}
+
+#GrantandContracts::before{
+  content: "\2022";  
+  color:#71a8ff; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#GrantandContracts{
+  float: left;
+  color:white;
+  margin-top:10px;
+}
+
+#FifthInput{
+  margin-left:300px;
+  margin-top:21px;
+}
+
+#DeprecationOrInterestExpenses::before{
+  content: "\2022";  
+  color:#71a8ff; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#DeprecationOrInterestExpenses{
+  float: left;
+  color:white;
+  margin-top:10px;
+}
+
+#SalesandServiceAuxiliary::before{
+  content: "\2022";  
+  color:#58c9fb; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#SalesandServiceAuxiliary{
+  float: left;
+  color:white;
+  margin-top:10px;
+}
+
+#SixthInput{
+  margin-left:300px;
+  margin-top:21px;
+}
+
+#InstitutionalSupport::before{
+  content: "\2022";  
+  color:#58c9fb; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#InstitutionalSupport{
+  float: left;
+  color:white;
+  margin-top:10px;
+}
+
+#GiftsEndowmentsInterest::before{
+  content: "\2022";  
+  color:#0f7ab4; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#GiftsEndowmentsInterest{
+  float: left;
+  color:white;
+  margin-top:10px;
+}
+
+#seventhInput{
+  margin-left:300px;
+  margin-top:21px;
+}
+
+#OtherList::before{
+  content: "\2022";  
+  color:#d4e4ff; 
+  font-weight: bold; 
+  font-size:180%;
+  display: inline-block;
+  width: 0.5em; 
+  margin-left: -0.5em; 
+}
+
+#OtherList{
+  float: left;
+  color:white;
+  margin-top:10px;
+}
+
+#eighthInput{
+  margin-left:300px;
+  margin-top:21px;
+}
+
+#totalShow{
+  color:white;
+  float: left;
+  margin-left:280px;
+  margin-top:10px;
+}
+
+#totalInput{
+  margin-left:300px;
+  margin-top:21px;
+}
+
+#next{
+  background-color:white;
+  color:#2e2e2e;
+}
+
+.infoText{
+  float: left;
+  background-color:white;
+  color:#2e2e2e;
+  border-radius:50%;
+  height:11px;
+  width:11px;
+  margin-top:23px;
+  text-align:center;
+  font-size:9px;
+  font-weight:bold;
+}
+/*list of items end*/
+/*list of button begin*/
+.button{
+  margin-top:20px;
+  margin-left:150px;
+  width:150px;
+  height:45px;
+  border-radius: 25px;
+  font-size:22px;
+  font-weight:bold;
+}
+
+
+#compare{
+  background-color: #71a8ff;
+  color:#2e2e2e;
+}
+
+#previous{
+  background-color: #7f8187;
+  color:white;
+}
+/*list of button end*/
+/*list of progress bar start*/
+#textPB{
+  margin-top: 10px;
+}
+#revenuePB{
+  float:left;
+  margin-left:50px;
+}
+
+#expensesPB{
+  float:left;
+  margin-left:80px;
+}
+
+#comparePB{
+  float:left;
+  margin-left:80px;
+}
+
+#shapePB{
+  margin-top:70px;
+}
+
+.blueColor{
+  background-color: #71a8ff;
+}
+
+.greyColor{
+  background-color:#7f8187;
+}
+
+.blackColor{
+  background-color:#2e2e2e;
+}
+
+.whiteTextColor{
+  color:white;
+}
+
+.blueTextColor{
+  color:#71a8ff;
+}
+
+#circle1{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-left:-420px;
+  float:left;
+}
+
+#line1{
+  height:10px;
+  width:150px;
+  margin-left:-391px;
+  border-top: 12px #2e2e2e solid;
+  float:left;
+}
+
+#circle2{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-left:-250px;
+  float:left;
+}
+
+#line2{
+  height:10px;
+  width:150px;
+  margin-left:-221px;
+  border-top: 12px #2e2e2e solid;
+  float:left;
+}
+
+#circle3{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-left:-72px;
+  float:left;
+}
+
+#invisibleline{
+  height:10px;
+  width:220px;
+  margin-left:1000px;
+  border-top: 12px #2e2e2e solid;
+}
+/*list of progress bar end*/
+
+/*list of info start*/
+.explain{
+  position: relative;
+  margin-top:-175px;
+  top:165px;
+}
+
+.triangle{
+  width: 0;
+  height: 0;
+  border-bottom: 14px solid #71a8ff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  margin-left:108px;
+}
+
+textarea{
+  background-color:#71a8ff;
+  margin-top:-10px;
+  border-color:#71a8ff;
+  padding:15px;
+  font-family: "Open Sans", sans-serif;
+}
+
+#MCRtextarea{
+  margin-left:-150px;
+}
+
+#MCEtextarea{
+  margin-left:-150px;
+}
+
+#secondRevenueExplain{
+   left:20px;
+}
+
+#secondExpenditureExplain{
+   left:130px;
+}
+
+#SUtextarea{
+  margin-left:-150px;
+}
+
+#IandAStextarea{
+  margin-left:-350px;
+}
+
+#thirdRevenueExplain{   
+   left:-61px;
+}
+
+#thirdExpenditureExplain{
+   left:-41px;
+}
+
+#Tuitextarea{
+  margin-left:-150px;
+}
+
+#Restextarea{
+  margin-left:-230px;
+}
+
+#fourthRevenueExplain{   
+   left:-15px;
+}
+
+#fourthExpenditureExplain{
+   left:130px;
+}
+
+#SFtextarea{
+  margin-left:-120px;
+}
+
+#SSandFAtextarea{
+  margin-left:-340px;
+}
+
+#fifthRevenueExplain{
+  left:45px;
+}
+
+#fifthExpenditureExplain{
+  left:110px;
+}
+
+#GandCtextarea{
+  margin-left:-190px;
+}
+
+#DItextarea{
+  margin-left:-330px;
+}
+
+#sixthRevenueExplain{
+  left:85px;
+}
+
+#sixthExpenditureExplain{
+  left:30px;
+}
+
+#SandSAtextarea{
+  margin-left:-280px;
+}
+
+#IStextarea{
+  margin-left:-280px;
+}
+
+#seventhExplain{
+  left:82px;
+}
+
+#GEItextarea{
+  margin-left:-280px;
+}
+
+#eighthRevenueExplain{
+  left:-75px;
+}
+
+#eighthExpenditureExplain{
+  left:-75px;
+}
+
+#ORtextarea{
+  margin-left:-150px;
+}
+
+#OEtextarea{
+  margin-left:-180px;
+}
+
+/*list of info end*/
